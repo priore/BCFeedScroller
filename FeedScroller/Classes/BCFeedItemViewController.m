@@ -78,11 +78,11 @@
     [self.view addSubview:view_2];
     
     // enable gesture (tap) for view 1
-    UITapGestureRecognizer *tapGesture_1 = [[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didFeedItemSelected:)] autorelease];
+    UITapGestureRecognizer *tapGesture_1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didFeedItemSelected:)];
     [view_1 addGestureRecognizer:tapGesture_1];
 
     // enable gesture (tap) for view 2
-    UITapGestureRecognizer *tapGesture_2 = [[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didFeedItemSelected:)] autorelease];
+    UITapGestureRecognizer *tapGesture_2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didFeedItemSelected:)];
     [view_2 addGestureRecognizer:tapGesture_2];
     
     // buffer for parser
@@ -117,8 +117,6 @@
         NSTimer *timer = [NSTimer timerWithTimeInterval:presentationInterval target:self selector:@selector(didNextFeedItem) userInfo:nil repeats:YES];
         [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
     }
-    
-    [parser release];
 }
 
 - (void)didNextFeedItem {
@@ -146,7 +144,7 @@
     viewIn.descriptionLabel.text = feedItem.summary;
     
     // format the data
-    NSDateFormatter *formatter = [[[NSDateFormatter alloc] init] autorelease];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"dd MMMM yyyy"];
     NSString *dataS = [formatter stringFromDate:feedItem.date];
     NSArray *dataA = [dataS componentsSeparatedByString:@" "];
@@ -230,28 +228,19 @@
 - (void)fitHeightLabel:(UILabel*)label maxHeight:(CGFloat)maxHeight
 {
     CGRect frame = label.frame;
-	NSString *text = [[label.text copy] autorelease];
+	NSString *text = [label.text copy];
 	label.lineBreakMode = UILineBreakModeWordWrap;
 	label.numberOfLines = 999;
     CGSize constraintSize = CGSizeMake(frame.size.width, MAXFLOAT);
     CGSize labelSize = [text sizeWithFont:label.font
                         constrainedToSize:constraintSize
-                            lineBreakMode:UILineBreakModeWordWrap];
+                            lineBreakMode:0];
     
     frame.size.height = maxHeight;
     if (labelSize.height < maxHeight)
         frame.size.height = labelSize.height;
     label.frame = frame;
     label.text = text;
-}
-
-- (void)dealloc {
-    
-    [view_1 release];
-    [view_2 release];
-    [parsedItems release];
-    [feedParser release];
-    [super dealloc];
 }
 
 @end

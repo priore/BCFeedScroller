@@ -74,7 +74,7 @@
         [self addSubview:dayLabel];
 
         // title
-        int titleXPos = dayLabel.frame.origin.x + dayLabel.frame.size.width;
+        int titleXPos = dayLabel.frame.origin.x + dayLabel.frame.size.width + 5;
         textLabel = [[UILabel alloc] initWithFrame:CGRectMake(titleXPos, y, frame.size.width - titleXPos - MARGIN_SIZE, 20)];
         textLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         textLabel.backgroundColor = [UIColor clearColor];
@@ -124,17 +124,6 @@
     }
     
     return self;
-}
-
-- (void)dealloc {
-    
-    [textLabel release];
-    [descriptionLabel release];
-    [dayLabel release];
-    [monthLabel release];
-    [yearLabel release];
-    [backgroundImageView release];
-    [super dealloc];
 }
 
 @end

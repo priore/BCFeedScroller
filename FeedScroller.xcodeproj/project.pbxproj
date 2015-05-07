@@ -14,12 +14,12 @@
 		9F42B82A15F4BAA900118A70 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F42B82915F4BAA900118A70 /* Foundation.framework */; };
 		9F42B82C15F4BAA900118A70 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F42B82B15F4BAA900118A70 /* CoreGraphics.framework */; };
 		9F42B83215F4BAA900118A70 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9F42B83015F4BAA900118A70 /* InfoPlist.strings */; };
-		9F42B83415F4BAA900118A70 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F42B83315F4BAA900118A70 /* main.m */; };
-		9F42B83815F4BAA900118A70 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F42B83715F4BAA900118A70 /* AppDelegate.m */; };
-		9F42B83B15F4BAA900118A70 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F42B83A15F4BAA900118A70 /* ViewController.m */; };
+		9F42B83415F4BAA900118A70 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F42B83315F4BAA900118A70 /* main.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		9F42B83815F4BAA900118A70 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F42B83715F4BAA900118A70 /* AppDelegate.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		9F42B83B15F4BAA900118A70 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F42B83A15F4BAA900118A70 /* ViewController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		9F42B83E15F4BAA900118A70 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F42B83C15F4BAA900118A70 /* ViewController_iPhone.xib */; };
-		9F42B85E15F4BBE000118A70 /* BCFeedItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F42B84A15F4BBE000118A70 /* BCFeedItemView.m */; };
-		9F42B85F15F4BBE000118A70 /* BCFeedItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F42B84C15F4BBE000118A70 /* BCFeedItemViewController.m */; };
+		9F42B85E15F4BBE000118A70 /* BCFeedItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F42B84A15F4BBE000118A70 /* BCFeedItemView.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		9F42B85F15F4BBE000118A70 /* BCFeedItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F42B84C15F4BBE000118A70 /* BCFeedItemViewController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		9F42B86015F4BBE000118A70 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F42B85015F4BBE000118A70 /* GTMNSString+HTML.m */; };
 		9F42B86115F4BBE000118A70 /* MWFeedInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F42B85215F4BBE000118A70 /* MWFeedInfo.m */; };
 		9F42B86215F4BBE000118A70 /* MWFeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F42B85415F4BBE000118A70 /* MWFeedItem.m */; };
@@ -218,7 +218,7 @@
 		9F42B81A15F4BAA900118A70 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0440;
+				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Danilo Priore";
 			};
 			buildConfigurationList = 9F42B81D15F4BAA900118A70 /* Build configuration list for PBXProject "FeedScroller" */;
@@ -298,48 +298,20 @@
 		9F42B84215F4BAA900118A70 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		9F42B84315F4BAA900118A70 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
-				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -350,9 +322,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FeedScroller/FeedScroller-Prefix.pch";
 				INFOPLIST_FILE = "FeedScroller/FeedScroller-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -363,9 +333,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FeedScroller/FeedScroller-Prefix.pch";
 				INFOPLIST_FILE = "FeedScroller/FeedScroller-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

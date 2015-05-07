@@ -64,9 +64,4 @@
         [view.backgroundImageView setImage:[UIImage imageNamed:@"background2.png"]];
 }
 
-- (void)dealloc {
-    [feedViewController release];
-    [super dealloc];
-}
-
 @end
